@@ -1,0 +1,18 @@
+{
+  "initial_capital": "1000",
+  "fee": "0.001",
+  "slippage": "0.0005",
+  "latency_ms": 1000,
+  "risk_limit": "0.005",
+  "instrument_cap": "0.375",
+  "gross_cap": "0.75",
+  "max_drawdown": "0.10",
+  "stale_ms": 90000,
+  "emergency_ms": 300000,
+  "family_weights": {
+    "trend": "0.25",
+    "breakout": "0.25",
+    "mean_reversion": "0.25",
+    "volatility": "0.25"
+  }
+}
