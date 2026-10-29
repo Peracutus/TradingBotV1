@@ -1,0 +1,37 @@
+# Local credentials and machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.idea/
+.vscode/
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Local research inputs, output and runtime journals
+outputs/
+baselines/
+external_benchmarks/
+five_year_validation/data/
+forward_data/
+data/
+**/data/
+*.sqlite*
+*.db
+*.db-*
+*.log
+*.pid
+*.csv
+*.csv.gz
+*.jsonl
+*.seed.json
+*.acceptance.json
+*.process.json
+*.launch.json
+*.conflicts.jsonl

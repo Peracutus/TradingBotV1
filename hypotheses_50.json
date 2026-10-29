@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "title": "Пробой максимума N-дней",
+    "description": "Покупать XAU/BTC при пробое максимума последних 20/50 дней; выход — по обратному пробою или ATR-stop.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Пробой с фильтром волатильности",
+    "description": "Пробой максимума работает лучше, если текущий ATR выше своего среднего за 50 дней.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Momentum 1 месяца",
+    "description": "Активы с положительной доходностью за последние 20–30 дней имеют повышенную вероятность продолжения движения.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Momentum 3 месяцев",
+    "description": "Покупать при положительной 60–90-дневной доходности; особенно интересно для BTC.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Ускорение momentum",
+    "description": "Не просто положительный momentum, а return(30d) > return(90d)/3.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "EMA 20/50 crossover",
+    "description": "Long при пересечении EMA20 выше EMA50, short/exit при обратном.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "EMA + ADX",
+    "description": "Торговать пересечение EMA только при ADX выше определённого порога.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Цена выше 200-day MA",
+    "description": "Использовать 200-дневную среднюю как regime filter: long-стратегии работают только выше неё.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Donchian breakout",
+    "description": "Покупать при пробое верхней границы канала 20/55 дней.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Последовательность сильных свечей",
+    "description": "Несколько подряд закрытий выше предыдущих максимумов увеличивают вероятность continuation.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Возврат к EMA20",
+    "description": "После сильного отклонения цены от EMA20 входить в сторону возврата.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Bollinger Bands reversal",
+    "description": "Покупать после выхода ниже нижней полосы и возврата внутрь диапазона.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Z-score цены",
+    "description": "Покупать при z < -2, закрывать позицию около z = 0.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "RSI extreme reversal",
+    "description": "RSI < 20/25 → long; RSI > 75/80 → exit/short.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "RSI divergence",
+    "description": "Новый минимум цены при более высоком минимуме RSI может предсказывать разворот.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Большая свеча → reversal",
+    "description": "После экстремальной дневной свечи искать движение в противоположную сторону на следующий день.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Gap reversal",
+    "description": "Для рынков/инструментов с gap: большой gap относительно ATR часто частично закрывается.",
+    "status": "not_applicable_to_24h_spot",
+    "required_data": [
+      "a market with an actual session gap"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Volatility spike reversal",
+    "description": "После резкого скачка ATR вероятность нормализации волатильности повышается.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Расстояние от VWAP",
+    "description": "Сильное отклонение цены от intraday VWAP может возвращаться к VWAP.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "additional market/session data"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Mean reversion только во флэте",
+    "description": "RSI/Bollinger-стратегии включать только при низком ADX.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Volatility breakout",
+    "description": "После периода аномально низкой волатильности торговать пробой диапазона.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Bollinger squeeze",
+    "description": "Узкие Bollinger Bands → ожидать сильного последующего движения.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "ATR compression → breakout",
+    "description": "Если ATR находится в нижнем 10–20% исторического распределения, ждать расширения.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Inside day breakout",
+    "description": "После нескольких inside bars торговать выход из диапазона.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Volatility expansion continuation",
+    "description": "Первый сильный импульс после compression имеет повышенную вероятность продолжения.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Volatility expansion exhaustion",
+    "description": "Альтернативная гипотеза: экстремальный рост ATR после уже длинного тренда означает близость разворота.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "ATR-based position sizing",
+    "description": "Не направление, а размер позиции определяется обратной величиной ATR.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Target volatility",
+    "description": "Держать фиксированную целевую волатильность портфеля, уменьшая позицию при росте volatility.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Volume confirmation breakout",
+    "description": "Пробой уровня работает лучше при объёме > 1.5× среднего.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Price-volume divergence",
+    "description": "Новый максимум цены при падающем объёме → снижение вероятности continuation.",
+    "status": "descriptive",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Volume spike reversal",
+    "description": "Экстремальный объём + экстремальная свеча → искать разворот.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Cumulative volume momentum",
+    "description": "Цена и cumulative volume должны подтверждать друг друга.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Order-book imbalance",
+    "description": "Для крипты: сильный imbalance bid/ask перед движением использовать как краткосрочный сигнал.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "historical order book/trade tape"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Trade-flow imbalance",
+    "description": "Агрессивные market buys/sells могут предсказывать движение на горизонте нескольких минут.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "historical order book/trade tape"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Funding + price",
+    "description": "Для BTC perpetual futures экстремально положительный funding + рост цены может предшествовать long squeeze.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Funding reversal",
+    "description": "Очень отрицательный funding + стабилизация цены → long.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Funding exhaustion",
+    "description": "Экстремально положительный funding + momentum slowdown → short/exit.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Open interest + price",
+    "description": "Price ↑ + OI ↑ → continuation hypothesis.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Price ↑ + OI ↓",
+    "description": "Рост цены при сокращении OI может быть short covering; проверить, насколько долго движение продолжается.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Liquidation cascade reversal",
+    "description": "Экстремальный объём ликвидаций + резкий импульс → искать mean reversion.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "perpetual funding/open interest/liquidations"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "BTC dominance regime",
+    "description": "Изменение BTC dominance использовать как фильтр для альткоинов.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "additional market/session data"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "BTC → ETH lead-lag",
+    "description": "Сильное движение BTC может предсказывать движение ETH с определённым лагом.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "BTC → altcoin rotation",
+    "description": "После сильного BTC impulse часть капитала может перетекать в ETH/альты.",
+    "status": "runnable",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Weekend effect",
+    "description": "Проверить, отличается ли доходность и volatility BTC в выходные от будних дней.",
+    "status": "descriptive",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Day-of-week effect",
+    "description": "Проверить устойчивость отдельных дней недели после контроля volatility и trend regime.",
+    "status": "descriptive",
+    "required_data": [
+      "BTC/ETH daily OHLCV"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Gold + real yields",
+    "description": "Изменение реальных доходностей US Treasuries использовать как фактор для XAU.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "gold and macro history"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Gold + DXY",
+    "description": "Сильное движение DXY в одну сторону может создавать статистически значимое движение золота в противоположную.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "gold and macro history"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Gold + US yields",
+    "description": "Изменение 10Y Treasury yield использовать как regime/filter для XAU.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "gold and macro history"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Gold momentum после macro shock",
+    "description": "После неожиданного сильного изменения макро-фактора золото может продолжать движение несколько дней.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "gold and macro history"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Gold–Bitcoin regime relationship",
+    "description": "Проверить, меняется ли корреляция BTC/XAU в зависимости от volatility/risk-on/risk-off режима и можно ли использовать это для динамического распределения капитала.",
+    "status": "blocked_missing_data",
+    "required_data": [
+      "gold and macro history"
+    ]
+  }
+]
